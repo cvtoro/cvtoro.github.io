@@ -4,6 +4,7 @@ $(function() {
 	var dir = 'down';
  $("#resume").css("display", "none");
   $("#git").css("display", "none");
+  $("#contact").css("display", "none");
 
 	$(document).on('scroll', function() {
 	    scrollTop = $(document).scrollTop();
@@ -15,15 +16,17 @@ $(function() {
 	    }
 	   
 	    prevScroll = scrollTop;
-	    if (dir == "down") {
-	        fadeOut();
-	    } else {
-	        fadeIn();
-	    }
+	    
+	        fade();
+	  
 
 	});
 
-	function fadeOut() {
+	function fade() {
+		if (scrollTop < 20 ) {
+	        $("#name").css("opacity", "1.0");
+	    }
+
 	    if (scrollTop >= 20 && scrollTop <= 40) {
 	        $("#name").css("opacity", "0.9");
 	    }
@@ -55,70 +58,68 @@ $(function() {
 	    }
 
 
-	    if (scrollTop >= 290 && scrollTop <= 310) {
+	    if (scrollTop >= 360 && scrollTop <= 380) {
 	        $("#resume").css("opacity", "0.9");
 	    }
-	    if (scrollTop > 310 && scrollTop <= 330) {
+	    if (scrollTop > 400 && scrollTop <= 420) {
 	        $("#resume").css("opacity", "0.8");
 
 	    }
-	    if (scrollTop > 330 && scrollTop <= 350) {
+	    if (scrollTop > 420 && scrollTop <= 440) {
 	        $("#resume").css("opacity", "0.7");
 	    }
-	    if (scrollTop > 350 && scrollTop <= 370) {
+	    if (scrollTop > 440 && scrollTop <= 460) {
 	        $("#resume").css("opacity", "0.6");
 	    }
-	    if (scrollTop > 370 && scrollTop <= 390) {
+	    if (scrollTop > 460 && scrollTop <= 480) {
 	        $("#resume").css("opacity", "0.5");
 	    }
-	    if (scrollTop > 400 && scrollTop <= 420) {
+	    if (scrollTop > 480 && scrollTop <= 500) {
 	        $("#resume").css("opacity", "0.4");
 	    }
-	    if (scrollTop > 420 && scrollTop <= 440) {
+	    if (scrollTop > 500 && scrollTop <= 520) {
 	        $("#resume").css("opacity", "0.3");
 	    }
-	    if (scrollTop > 440 && scrollTop <= 460) {
+	    if (scrollTop > 520 && scrollTop <= 540) {
 	        $("#resume").css("opacity", "0.2");
 	    }
-	    if (scrollTop > 460 && scrollTop <= 480) {
+	    if (scrollTop > 540 && scrollTop <= 560) {
 	        $("#resume").css("opacity", "0.0");
 	         $("#git").css("display", "inherit");
 	    }
 
-	    if (scrollTop >= 540 && scrollTop <= 560) {
+	    if (scrollTop >= 700 && scrollTop <= 720) {
 	        $("#git").css("opacity", "0.9");
 	    }
-	    if (scrollTop > 560 && scrollTop <= 580) {
+	    if (scrollTop > 720 && scrollTop <= 740) {
 	        $("#git").css("opacity", "0.8");
 
 	    }
-	    if (scrollTop > 580 && scrollTop <= 600) {
+	    if (scrollTop > 740 && scrollTop <= 760 ) {
 	        $("#git").css("opacity", "0.7");
 	    }
-	    if (scrollTop > 600 && scrollTop <= 620) {
+	    if (scrollTop > 780 && scrollTop <= 800) {
 	        $("#git").css("opacity", "0.6");
 	    }
-	    if (scrollTop > 620 && scrollTop <= 640) {
+	    if (scrollTop > 800 && scrollTop <= 820) {
 	        $("#git").css("opacity", "0.5");
 	    }
-	    if (scrollTop > 640 && scrollTop <= 660) {
+	    if (scrollTop > 820 && scrollTop <= 840) {
 	        $("#git").css("opacity", "0.4");
 	    }
-	    if (scrollTop > 660 && scrollTop <= 680) {
+	    if (scrollTop > 840 && scrollTop <= 860) {
 	        $("#git").css("opacity", "0.3");
 	    }
-	    if (scrollTop > 680 && scrollTop <= 700) {
+	    if (scrollTop > 880 && scrollTop <= 900) {
 	        $("#git").css("opacity", "0.2");
 	    }
-	    if (scrollTop > 700 && scrollTop <= 720) {
+	    if (scrollTop > 900 && scrollTop <= 920) {
 	        $("#git").css("opacity", "0.0");
+	        $("#contact").css("display", "inherit");
 	    }
 
 
 	};
 
-	function fadeIn() {
-	    console.log("fade in");
-
-	};
+	
 });
