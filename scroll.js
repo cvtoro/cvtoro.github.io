@@ -1,119 +1,131 @@
 $(function() {
+
+
+	    var elem = $("#downArrow");
+	    var interval = setInterval(function() {
+	        if (elem.css('display') == 'none') {
+	             elem.fadeIn( "slow", function() {
+				    // Animation complete
+				  });
+	        } else {
+	            elem.fadeOut( "slow", function() {
+				    // Animation complete.
+				  });
+	        }    
+	    }, 700);
+	
 	var scrollTop = $(document).scrollTop();
-	var prevScroll = 0;
-	var dir = 'down';
- $("#resume").css("display", "none");
-  $("#git").css("display", "none");
-  $("#contact").css("display", "none");
+
+	
+	var scrollPercent = 100 * $(window).scrollTop() / ($(document).height() - $(window).height());
+  // $("#resume").css("display", "none");
+  // $("#git").css("display", "none");
+  // $("#contact").css("display", "none");
 
 	$(document).on('scroll', function() {
-	    scrollTop = $(document).scrollTop();
-
-	    if (scrollTop < prevScroll) {
-	        dir = 'up';
-	    } else {
-	        dir = 'down';
-	    }
-	   
-	    prevScroll = scrollTop;
-	    
-	        fade();
+	    scrollPercent = scrollPercent = 100 * $(window).scrollTop() / ($(document).height() - $(window).height());
+	    console.log(scrollPercent);
+	    fade();
 	  
 
 	});
 
 	function fade() {
-		if (scrollTop < 20 ) {
+		if (scrollPercent < 1 ) {
 	        $("#name").css("opacity", "1.0");
 	    }
 
-	    if (scrollTop >= 20 && scrollTop <= 40) {
+	    if (scrollPercent >= 2 && scrollPercent <= 3) {
 	        $("#name").css("opacity", "0.9");
 	    }
-	    if (scrollTop > 40 && scrollTop <= 60) {
+	    if (scrollPercent > 4 && scrollPercent <= 5) {
 	        $("#name").css("opacity", "0.8");
-	        $("#downArrow").css("opacity", "0.0");
+	        $("#downArrow").css("display", "none");
+	        clearInterval(interval);
 	    }
-	    if (scrollTop > 60 && scrollTop <= 80) {
+	    if (scrollPercent > 5 && scrollPercent <= 6) {
 	        $("#name").css("opacity", "0.7");
 	    }
-	    if (scrollTop > 80 && scrollTop <= 100) {
+	    if (scrollPercent > 6 && scrollPercent <= 7) {
 	        $("#name").css("opacity", "0.6");
 	    }
-	    if (scrollTop > 100 && scrollTop <= 120) {
+	    if (scrollPercent > 7 && scrollPercent <= 8) {
 	        $("#name").css("opacity", "0.5");
 	    }
-	    if (scrollTop > 120 && scrollTop <= 140) {
+	    if (scrollPercent > 8 && scrollPercent <= 9) {
 	        $("#name").css("opacity", "0.4");
 	    }
-	    if (scrollTop > 140 && scrollTop <= 160) {
+	    if (scrollPercent > 9 && scrollPercent <= 10) {
 	        $("#name").css("opacity", "0.3");
 	    }
-	    if (scrollTop > 160 && scrollTop <= 180) {
+	    if (scrollPercent > 10 && scrollPercent <= 11) {
 	        $("#name").css("opacity", "0.2");
 	    }
-	    if (scrollTop > 180 && scrollTop <= 200) {
+	    if (scrollPercent > 11 && scrollPercent <= 13) {
 	        $("#name").css("opacity", "0.0");
 	        $("#resume").css("display", "inherit");
 	    }
 
-
-	    if (scrollTop >= 360 && scrollTop <= 380) {
+	    if (scrollPercent >13 && scrollPercent <= 32) {
+	        $("#resume").css("opacity", "1.0");
+	    }
+	    if (scrollPercent > 32 && scrollPercent <= 33) {
 	        $("#resume").css("opacity", "0.9");
 	    }
-	    if (scrollTop > 400 && scrollTop <= 420) {
+	    if (scrollPercent > 33 && scrollPercent <= 34) {
 	        $("#resume").css("opacity", "0.8");
 
 	    }
-	    if (scrollTop > 420 && scrollTop <= 440) {
+	    if (scrollPercent > 34 && scrollPercent <= 35) {
 	        $("#resume").css("opacity", "0.7");
 	    }
-	    if (scrollTop > 440 && scrollTop <= 460) {
+	    if (scrollPercent > 35 && scrollPercent <= 36.5) {
 	        $("#resume").css("opacity", "0.6");
 	    }
-	    if (scrollTop > 460 && scrollTop <= 480) {
+	    if (scrollPercent > 36.5 && scrollPercent <= 37.5) {
 	        $("#resume").css("opacity", "0.5");
 	    }
-	    if (scrollTop > 480 && scrollTop <= 500) {
+	    if (scrollPercent > 37.5 && scrollPercent <= 38.5) {
 	        $("#resume").css("opacity", "0.4");
 	    }
-	    if (scrollTop > 500 && scrollTop <= 520) {
+	    if (scrollPercent > 38.5 && scrollPercent <= 39.5) {
 	        $("#resume").css("opacity", "0.3");
 	    }
-	    if (scrollTop > 520 && scrollTop <= 540) {
-	        $("#resume").css("opacity", "0.2");
-	    }
-	    if (scrollTop > 540 && scrollTop <= 560) {
+
+	    if (scrollPercent > 39.5 && scrollPercent <= 40) {
 	        $("#resume").css("opacity", "0.0");
 	         $("#git").css("display", "inherit");
 	    }
 
-	    if (scrollTop >= 700 && scrollTop <= 720) {
+		if (scrollPercent > 40 && scrollPercent <= 58) {
+	        $("#git").css("opacity", "1.0");
+	    }
+	    if (scrollPercent > 58 && scrollPercent <= 58.5) {
 	        $("#git").css("opacity", "0.9");
 	    }
-	    if (scrollTop > 720 && scrollTop <= 740) {
+	    if (scrollPercent > 58.5 && scrollPercent <= 59.5) {
 	        $("#git").css("opacity", "0.8");
 
 	    }
-	    if (scrollTop > 740 && scrollTop <= 760 ) {
+	    if (scrollPercent > 59.5 && scrollPercent <= 60 ) {
 	        $("#git").css("opacity", "0.7");
 	    }
-	    if (scrollTop > 780 && scrollTop <= 800) {
+	    if (scrollPercent > 60 && scrollPercent <= 60.5) {
 	        $("#git").css("opacity", "0.6");
 	    }
-	    if (scrollTop > 800 && scrollTop <= 820) {
+	    if (scrollPercent > 60.5 && scrollPercent <= 61) {
 	        $("#git").css("opacity", "0.5");
 	    }
-	    if (scrollTop > 820 && scrollTop <= 840) {
+	    if (scrollPercent > 61.5 && scrollPercent <= 62) {
 	        $("#git").css("opacity", "0.4");
 	    }
-	    if (scrollTop > 840 && scrollTop <= 860) {
+	    if (scrollPercent > 62 && scrollPercent <= 62.5) {
 	        $("#git").css("opacity", "0.3");
 	    }
-	    if (scrollTop > 880 && scrollTop <= 900) {
+	    if (scrollPercent > 62.5 && scrollPercent <= 63) {
 	        $("#git").css("opacity", "0.2");
 	    }
-	    if (scrollTop > 900 && scrollTop <= 920) {
+	    if (scrollPercent > 63 && scrollPercent <=64) {
 	        $("#git").css("opacity", "0.0");
 	        $("#contact").css("display", "inherit");
 	    }
