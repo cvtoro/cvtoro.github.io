@@ -18,9 +18,7 @@ $(function() {
 
 	
 	var scrollPercent = 100 * $(window).scrollTop() / ($(document).height() - $(window).height());
-  // $("#resume").css("display", "none");
-  // $("#git").css("display", "none");
-  // $("#contact").css("display", "none");
+  
 
 	$(document).on('scroll', function() {
 	    scrollPercent = scrollPercent = 100 * $(window).scrollTop() / ($(document).height() - $(window).height());
@@ -31,6 +29,7 @@ $(function() {
 	});
 
 	function fade() {
+		clearInterval(interval);
 		if (scrollPercent < 1 ) {
 	        $("#name").css("opacity", "1.0");
 	    }
@@ -41,7 +40,7 @@ $(function() {
 	    if (scrollPercent > 4 && scrollPercent <= 5) {
 	        $("#name").css("opacity", "0.8");
 	        $("#downArrow").css("display", "none");
-	        clearInterval(interval);
+	        
 	    }
 	    if (scrollPercent > 5 && scrollPercent <= 6) {
 	        $("#name").css("opacity", "0.7");
