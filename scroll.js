@@ -30,7 +30,7 @@ $(function() {
 
     function fade() {
         clearInterval(interval);
-        $("#scroll").css("display", "none");
+
 
         if (scrollPercent < 1) {
             $("#name").css("opacity", "1.0");
@@ -41,6 +41,7 @@ $(function() {
         }
         if (scrollPercent > 4 && scrollPercent <= 5) {
             $("#name").css("opacity", "0.8");
+             $("#scroll").css("display", "none");
             $("#downArrow").css("display", "none");
 
         }
